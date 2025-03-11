@@ -15,3 +15,156 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 /*--------------------*/
+@mixin stylefontz( $fw, $fs, $c){
+    font-weight: $fw;
+    font-size: $fs;
+    color: $c;
+}
+@mixin stylcenter($d, $ai, $jc){
+    display: $d;
+    align-items: $ai;
+    justify-content: $jc;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+}
+//  @include stylefontz($font-family, 300, 16px, #323232); 
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.header {
+    padding: 40px 0;
+    &__content {
+        @include stylcenter(flex, center, space-between);
+    }
+    &__menu-item {
+        @include stylcenter(flex, center, space-between);
+        gap: 20px;
+    }
+    &__list-link {
+        @include stylefontz(400, 26px, #000); 
+    }
+    &__content-search {
+        form {
+            padding: 10px;
+            border-radius: 10px;
+            @include stylcenter(flex, center, space-between);
+            gap: 20px;
+            background: #ededed;
+            button {
+                width: 30px;
+                height: 30px;
+                .search-icon {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            input {
+                @include stylefontz(400, 26px, #000); 
+                background: transparent;
+            }
+        }
+        
+    }
+    &__mobile-burger {
+        @include stylcenter(none, center, space-between);
+        flex-direction: column;
+        width: 35px;
+        height: 30px;
+        span {
+            display: block;
+            width: 100%;
+            height: 5px;
+            border-radius: 10px;
+            background: #000;
+        }
+    }
+    &__mobile-menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgb(0 0 0 / 58%);
+        overflow: hidden;
+        .header__menu-item {
+            height: 100%;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+}
+.bar {
+    &__content-item {
+        width: 40%;
+        @include stylcenter(flex, center, space-between);
+    }
+    &__item-list {
+        @include stylcenter(flex, center, space-between);
+    }
+    &__list-link {
+        @include stylefontz(500, 16px, #5a5757); 
+        &.active {
+            color: red;
+        }
+    }
+}
+@media (max-width: 1024px) {
+    .header {
+        &__list-link {
+        font-size: 16px; 
+        }
+    }
+    .bar {
+        &__content-item {
+            width: 50%;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .header {
+        &__content-menu {
+            display: none;
+        }
+        &__mobile-burger {
+            display: flex;
+        }
+    }
+    .bar {
+        &__content-item {
+            width: 60%;
+        }
+    }
+}
+@media (max-width: 650px) {
+    .bar {
+        &__content-item {
+            width: 70%;
+        }
+    }
+}
+@media (max-width: 470px) {
+    .header {
+        &__content-search {
+            form {
+                input {
+                    font-size: 16px;
+                }
+                button {
+                    width: 20px;
+                    height: 20px;
+                }
+
+            }
+        }
+    }
+    .bar {
+        &__content-item {
+            width: 100%;
+        }
+    }
+}
