@@ -26,6 +26,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     justify-content: $jc;
 }
 body {
+    background: #ededed;
     font-family: "Open Sans", sans-serif;
 }
 //  @include stylefontz($font-family, 300, 16px, #323232); 
@@ -35,6 +36,7 @@ body {
     padding: 0 20px;
 }
 .header {
+    background: #fff;
     padding: 40px 0;
     &__content {
         @include stylcenter(flex, center, space-between);
@@ -99,6 +101,8 @@ body {
     }
 }
 .bar {
+    background: #fff;
+    padding-bottom: 30px;
     &__content-item {
         width: 40%;
         @include stylcenter(flex, center, space-between);
@@ -113,6 +117,194 @@ body {
         }
     }
 }
+.main {
+    background: #fff;
+    margin-top: 20px;
+    &__content-btn {
+        padding: 30px 0;
+        width: 40%;
+        @include stylcenter(flex, center, space-between);
+    }
+    &__btn-button {
+        padding: 10px 0;
+        background: transparent;
+        @include stylefontz(500, 16px, #000); 
+        &.active {
+            border-bottom: 1px solid red;
+            color: red;
+        }
+    }
+    &__container-body {
+        @include stylcenter(flex, unset, space-between);
+        gap: 20px;
+    }
+    &__body-slider {
+        width: 50%;
+        position: relative;
+    }
+    &__slide-info {
+        margin: 30px 0;
+    }
+    &__info-title {
+        @include stylefontz(500, 26px, #000); 
+    }
+    &__info-body {
+        margin: 30px 0;
+        @include stylcenter(flex, center, space-between);
+    }
+    &__body-sale {
+        padding: 10px;
+        background: #ebcbcb;
+        @include stylefontz(500, 16px, red); 
+        border-radius: 10px;
+    }
+    &__body-code {
+        @include stylefontz(500, 16px, #5a5757); 
+    }
+    &__info-price {
+        @include stylefontz(500, 36px, red);  
+        span {
+            font-size: 26px;
+        }
+    }
+    &__info-btn {
+        margin: 30px 0;
+        @include stylcenter(flex, center, space-between);
+    }
+    &__message-button {
+        border-radius: 10px;
+        padding: 25px;
+        width: 79%;
+        background: red;
+        @include stylefontz(500, 26px, #fff);
+    }
+    &__message-message {
+        border-radius: 10px;
+        padding: 25px;
+        width: 19%;
+        background: #ebcbcb;
+        svg {
+            width: 45px;
+            height: 30px;
+        }
+    }
+    &__description-name {
+        @include stylefontz(400, 26px, #000); 
+        margin: 30px 0;
+    }
+    &__description-text {
+        @include stylefontz(400, 16px, #000); 
+        line-height: 1.5;
+    }
+    &__description-btn {
+        @include stylcenter(flex, center, space-between);
+        background: transparent;
+        margin: 30px 0;
+        @include stylefontz(400, 16px, blue);
+        gap: 20px;
+        svg {
+            transform: rotateZ(89deg);
+        } 
+    }
+}
+.swiper {
+    background: #fff;
+}
+.swiper-slide {
+    padding:0 0 50px 0 !important;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.swiper-pagination {
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background: red;
+    }
+}
+.characteristics {
+    margin-top: 20px;
+    background: #fff;
+    &__content-name {
+        @include stylefontz(400, 26px, #000); 
+        padding: 30px 0;
+    }
+    &__content-body {
+        width: 50%;
+    }
+}
+.info {
+    padding-bottom: 30px;
+    &__body {
+        margin: 20px 0;
+        @include stylcenter(flex, center, space-between);
+    }
+    &__body-name {
+        @include stylefontz(400, 16px, #000); 
+        line-height: 1.5;
+    }
+    &__body-text {
+        @include stylefontz(500, 18px, #000); 
+        line-height: 1.5;
+    }
+}
+.salesman {
+    background: #fff;
+    margin-top: 20px;
+    &__content {
+        width: 50%;
+    }
+    &__content-info {
+        @include stylcenter(flex, center, space-between);
+    }
+    &__info-link {
+        @include stylefontz(400, 16px, red); 
+    }
+    &__body {
+        margin-bottom: 20px;
+        @include stylcenter(flex, center, space-between);
+    }
+    &__body-bg {
+        border-radius: 10px;
+        border: 1px solid #ededed;
+        width: 120px;
+        height: 100px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+    }
+    &__info-name {
+        @include stylefontz(500, 18px, #000);
+        margin-bottom: 10px;
+
+    }
+    &__info-btn {
+        @include stylefontz(400, 16px, #000);
+    }
+    &__body-btn {
+        @include stylefontz(400, 18px, red); 
+    }
+    &__content-btn {
+        @include stylcenter(flex, center, space-between);
+    }
+    &__btn-button {
+        padding: 25px;
+        width: 48%;
+        border-radius: 10px;
+        background: red;
+        @include stylefontz(500, 16px, #fff); 
+        &.button {       
+            background: #ebcbcb;
+            color: red;
+        }
+    }
+}
 @media (max-width: 1024px) {
     .header {
         &__list-link {
@@ -122,6 +314,14 @@ body {
     .bar {
         &__content-item {
             width: 50%;
+        }
+    }
+    .salesman {
+        &__content {
+            width: 60%;
+        }
+        &__btn-button {
+            font-size: 14px;
         }
     }
 }
@@ -139,11 +339,52 @@ body {
             width: 60%;
         }
     }
+    .main {
+        &__content-btn {
+            width: 100%;
+        }
+        &__container-body {
+            flex-direction: column;
+        }
+        &__body-slider {
+            width: 100%;
+        }
+    }
+    .salesman {
+        &__content {
+            width: 100%;
+        }
+        &__btn-button {
+            padding: 20px;
+            font-size: 12px;
+        }
+    }
 }
 @media (max-width: 650px) {
     .bar {
         &__content-item {
             width: 70%;
+        }
+    }
+    .main {
+        &__btn-button {
+            font-size: 14px;
+        }
+        &__message-message,
+        &__message-button {
+            padding: 20px;
+            font-size: 21px;
+        }
+        &__message-message {
+            svg {
+                width: 30px;
+                height: 25px;
+            }
+        }
+    }
+    .characteristics {
+        &__content-body {
+            width: 100%;
         }
     }
 }
@@ -165,6 +406,19 @@ body {
     .bar {
         &__content-item {
             width: 100%;
+        }
+    }
+    .salesman {
+        &__content {
+            width: 100%;
+        }
+        &__body-btn,
+        &__info-name {
+            font-size: 16px;
+        }
+        &__btn-button {
+            padding: 10px;
+            font-size: 12px;
         }
     }
 }
